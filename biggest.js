@@ -1,5 +1,5 @@
 /*
-Uzduotis: reikia rasti VISU masyve esanciu "normaliu" skaiciu biggesta.
+Uzduotis: reikia rasti didziausia skaiciu tarp VISU masyve esanciu "normaliu" skaiciu.
 */
 const a = [1, 2, 3, 4, 10, 6, 7, 8, 10];
 const b = [1, 2, true, 3, 4, '', 10, 6, NaN, 7, 8, -Infinity, 10];
