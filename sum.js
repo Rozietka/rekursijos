@@ -9,26 +9,38 @@ const c = [
     8, [2, 10], [4, 7], -Infinity, 10
 ];
 
+function isGoodNumber(n) {
+    return typeof n === 'number' && isFinite(n)
+}
+
 function sum(list) {
     let total = 0;
 
     for (const n of list) {
-        if (typeof n !== 'number'
-        || !isFinite(n)) {
+        if (Array.isArray(n)) {
+            for (const m of n) {
+                if (!isGoodNumber(m)) {
+                    continue;
+                }
+                total += m;
+            }
+        }
+
+        if (!isGoodNumber(n)) {
             continue;
         }
+
         total += n;
     }
 
     return total;
 }
-
 const r1 = sum(a);
-console.log('AREA', r1, 51);
+console.log('AREA', r1, '-->', 51);
 
 const r2 = sum(b);
-console.log('AREA', r2, 51);
+console.log('AREA', r2, '-->', 51);
 
 const r3 = sum(c);
-console.log('AREA', r3, 51);
+console.log('AREA', r3, '-->', 51);
 
