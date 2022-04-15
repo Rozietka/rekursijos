@@ -1,65 +1,42 @@
 /*
-Uzduotis: reikia rasti VISU masyve esanciu "normaliu" skaiciu suma.
+Uzduotis: reikia rasti VISU masyve esanciu "normaliu" skaiciu biggesta.
 */
 const a = [1, 2, 3, 4, 10, 6, 7, 8, 10];
 const b = [1, 2, true, 3, 4, '', 10, 6, NaN, 7, 8, -Infinity, 10];
 const c = [
     1, true, 3, { name: 'Petras' },
     '', ['labas', 'rytas'], 6, NaN,
-    8, [2, 10], [4, 7], -Infinity, 10
+    8, [2, 100], [4, 7], -Infinity, 10
 ];
 const d = [
-    1, 2, 3,
-    [4], [5], [6],
-    [7, 8], [9, 10],
+    -1, -2, -3,
+    [-4], [-5],
     [
-        1, 2, 3,
-        [4], [5], [6],
-        [7, 8], [9, 10],
+        -6, -7,
+        [-8, -9],
         [
-            1, 2, 3,
-            [4], [5], [6],
-            [7, 8], [9, 10],
-            [
-                1, 2, 3,
-                [4], [5], [6],
-                [7, 8], [9, 10],
-                [
-                    1, 2, 3,
-                    [4], [5], [6],
-                    [7, 8], [9, 10],
-                ],
-            ],
+            -10, -11,
+            [0, 4],
         ],
-    ],
+        [-12, -13],
+    ]
 ];
 
 function isGoodNumber(n) {
     return typeof n === 'number' && isFinite(n)
 }
-function sum(list) {
-    let total = 0;
 
-    for (const n of list) {
-        if (Array.isArray(n)) {
-            total += sum(n);
-
-        }
-        if (!isGoodNumber(n)) {
-            continue;
-        }
-        total += n;
-    }
-
-    return total;
+function biggest(list) {
 }
-const r1 = sum(a);
-console.log('AREA', r1, '-->', 51);
-const r2 = sum(b);
-console.log('AREA', r2, '-->', 51);
 
-const r3 = sum(c);
-console.log('AREA', r3, '-->', 51);
+const r1 = biggest(a);
+console.log('AREA', r1, '-->', 10);
 
-const r4 = sum(d);
-console.log('AREA', r4, '-->', 275);
+const r2 = biggest(b);
+console.log('AREA', r2, '-->', 10);
+
+const r3 = biggest(c);
+console.log('AREA', r3, '-->', 100);
+
+const r4 = biggest(d);
+console.log('AREA', r4, '-->', 4);
