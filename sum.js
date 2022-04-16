@@ -50,6 +50,14 @@ function sum(list) {
         total += n;
     }
 
+    /*
+    for () {
+        jei array -> tai kas uzkuria rekursija
+        jei netinkama primitivi reiksme -> continue
+        jei primitivi reiksme -> esminis darbas
+    }
+    */
+
     return total;
 }
 const r1 = sum(a);
