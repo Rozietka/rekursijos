@@ -79,7 +79,7 @@ function mostChildren() {
 }
 
 const o = oldest(tree);
-const m = oldest(tree);
+const m = mostChildren(tree);
 
 console.log('Elze nugyveno 107 metus.');
 console.log(o);
