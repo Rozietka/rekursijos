@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "sum": "nodemon ./sum.js",
-    "odest": "nodemon ./odest.js",
+    "oldest": "nodemon ./oldest.js",
     "biggest": "nodemon ./biggest.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
